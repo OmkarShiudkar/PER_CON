@@ -1,0 +1,170 @@
+{% extends "basic.html" %}
+{% block title %} Contact us page {% endblock title %}
+
+
+<title>Contact</title>
+<style>
+
+</style>
+{% block body %}
+
+<body>
+    <link href="//netdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <div class="contact-pageheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="contact-caption">
+                        <h1 class="contact-title">Don’t Be Shy, Talk to Me.</h1>
+                        <p class="contact-text" style="font-size: 1.2rem;">Here is a few approaches to get in touch with me. It would be ideal if
+                            you send an email, fill the contact form <strong>I'm looking forward to speaking with
+                                you.</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5 col-sm-12 col-xs-12">
+                    <div class="contact-form" id="sectionmsg">
+                        <h3 class="contact-info-title">Contact Me</h3>
+                        <div class="row">
+                            <form method='POST' action="/contact/">
+                                {% csrf_token %}
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label sr-only " for="Name">Name</label>
+                                        <input id="name" name="name" type="text" placeholder="Name" class="form-control"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label sr-only " for="email">Email</label>
+                                        <input id="email" name="email" type="email" placeholder="Email"
+                                            class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label sr-only " for="Phone" class="form-control" >Phone</label>
+                                        <input id="phone" name="phone" type="text" placeholder="Phone"
+                                            class="form-control" pattern="[1-9]{1}[0-9]{9}"  maxlength="10"  required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label class="control-label required sr-only" for="select"></label>
+                                        <select class="form-control" id="content" name="content">
+                                            <option value="">Why Are You Getting In Touch?</option>
+                                            <option value="">Relationship</option>
+                                            <option value="">Life Coaching</option>
+                                            <option value="">Leadership</option>
+                                            <option value="">Time Management</option>
+                                            <option value="">Help Someone</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb20">
+                                    <div class="form-group">
+                                        <label class="control-label sr-only" for="desc">Description</label>
+                                        <textarea class="form-control pdt20" id="desc" name="desc" rows="4"
+                                            placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                                    <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-medium">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb60">
+                    <hr>
+                </div>
+            </div>
+            <div class="row" id="sectioncontact">
+                <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                    <!--<div id="contact-map"></div>-->
+                    <div style="width: 100%;border:2px solid black;"><iframe width="100%" height="450" frameborder="0"
+                            scrolling="no" marginheight="0" marginwidth="0" target="_blank"
+                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Vishwakarma%20Institute%20of%20Information%20TechnologySurvey%20No.%202/3/4,%20VIM%20Private%20Rd,%20Kapil%20Nagar,%20Kondhwa,%20Pune,%20Maharashtra%20411048+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        </iframe><a href="https://www.mapsdirections.info/en/measure-map-radius/"  target="_blank">Radius distance
+                            map</a></div>
+                </div>
+                <div class="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5 col-sm-6 col-xs-12">
+                    <div class="">
+                        <h3 class="title-bold" style="font-size: 3rem;">Contact Info</h3>
+                        <p style="font-size: 1.2rem;">Please help us serve you better by sharing the following information.
+                        </p>
+                    </div>
+                    <div class="contact-section" style="font-size: 1.2rem;" >
+                        <div class="contact-icon"><i class="fa fa-map-marker"></i></div>
+                        <div class="contact-info">
+                            <p style="color: rgb(49, 149, 189);"><a
+                                    href="https://www.google.co.in/maps/place/Vishwakarma+Institute+of+Information+Technology+(VIIT)/@18.4596856,73.882143,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2ebdfc7cefc47:0xe256080ea7235d06!8m2!3d18.4596797!4d73.8843763">
+                                    Survey No. 3/4, Kondhwa (Budruk) Pune – 411048, Maharashtra,India</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-section" style="font-size: 1.2rem;">
+                        <div class="contact-icon"><i class="fa fa-phone"></i></div>
+                        <div class="contact-info">
+                            <a href="tel:5558920234"
+                                onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});">
+                                <p class="call-button">+180-123-4567</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-section" style="font-size: 1.2rem;">
+                        <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+                        <div class="contact-info">
+
+                            <a href="mailto: percon21.official@gmail.com">
+                                <p>percon21.official@gmail.com</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+            var uluru = {
+                lat: 18.46398567,
+                lng: 73.86828239
+            };
+            var map = new google.maps.Map(document.getElementById('contact-map'), {
+                zoom: 14,
+                center: uluru,
+                scrollwheel: false
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                icon: 'https://easetemplate.com/free-website-templates/life-coach/images/map_marker.png'
+
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZib4Lvp0g1L8eskVBFJ0SEbnENB6cJ-g&callback=initMap">
+        </script>
+</body>
+
+
+{% endblock body %}
